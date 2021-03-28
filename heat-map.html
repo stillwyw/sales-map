@@ -48,9 +48,9 @@
       var d = 0
       var feature = turf.featurecollection([feature]);
       console.log('feature is', feature);
-      var points = turf.featurecollection(new_addresses.map(function (address) {
-        var p = turf.point([address[1],address[0]])
-        return p;
+      var points = turf.featurecollection(new_addresses.filter(a => a).map(function (address) {
+          var p = turf.point([address[0],address[1]])
+          return p;
       }));
 
       console.log('points are',points);
