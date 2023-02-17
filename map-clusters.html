@@ -1,60 +1,60 @@
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <script src='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
-    <link href='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
-    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <script src="https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+    <link
+      href="https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css"
+      rel="stylesheet"
+    />
     <script src="locations.js"></script>
     <title>Cherry Sales Map</title>
     <style type="text/css" media="screen">
-    #map{
-      width: 100%;
-      height: 100%;
-    }
-    </style>
-
-</head>
-<body>
-
-  <div id="map">
-
-  </div>
-
-
-<script type="text/javascript">
-  $(function () {
-
-  L.mapbox.accessToken = 'pk.eyJ1IjoieXVud2VpIiwiYSI6IkhvMlVpZnMifQ.dQ98oRvdtNu2LzqmbnX0PQ';
-  var map = L.mapbox.map('map', 'mapbox.streets');
-
-      var markers = new L.MarkerClusterGroup();
-
-      for (var i = 0; i < addresses.length; i++) {
-          var a = addresses[i];
-          var marker = L.marker(new L.LatLng(a[0], a[1]), {
-              icon: L.mapbox.marker.icon({
-                    'marker-color': '#a9032f',
-                    'marker-size': 'large'
-                })
-          });
-          markers.addLayer(marker);
+      #map {
+        width: 100%;
+        height: 100%;
       }
-      markers.addTo(map);
-      map.fitBounds(markers);
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
 
+    <script type="text/javascript">
+      $(function () {
+        L.mapbox.accessToken =
+          "pk.eyJ1IjoieXVud2VpIiwiYSI6IkhvMlVpZnMifQ.dQ98oRvdtNu2LzqmbnX0PQ";
+        var map = L.mapbox.map("map", "mapbox.streets");
 
+        var markers = new L.MarkerClusterGroup();
 
-  })
-</script>
-
-</body>
+        for (var i = 0; i < addresses.length; i++) {
+          var a = addresses[i];
+          if (a[0] && a[1]) {
+            var marker = L.marker(new L.LatLng(a[0], a[1]), {
+              icon: L.mapbox.marker.icon({
+                "marker-color": "#a9032f",
+                "marker-size": "large",
+              }),
+            });
+            markers.addLayer(marker);
+          }
+        }
+        markers.addTo(map);
+        map.fitBounds(markers);
+      });
+    </script>
+  </body>
 </html>
