@@ -1298,8 +1298,8 @@ var sites = [
     longitude: 145.02116994808426,
   },
   {
-    latitude: "-6.971018232654106",
-    longitude: " 110.4269725617103",
+    latitude: -6.971018232654106,
+    longitude: 110.4269725617103,
   },
   {
     latitude: -6.980882816712628,
@@ -1446,8 +1446,8 @@ var sites = [
     longitude: 145.00693603837075,
   },
   {
-    latitude: "-6.971056226124387",
-    longitude: "110.42707463216824",
+    latitude: -6.971056226124387,
+    longitude: 110.42707463216824,
   },
   {
     latitude: -6.971141892619866,
@@ -2316,18 +2316,6 @@ var sites = [
   {
     latitude: -37.8032533423393,
     longitude: 144.96105078644737,
-  },
-  {
-    latitude: "5814719.69",
-    longitude: "314820.487",
-  },
-  {
-    latitude: "5814719.69",
-    longitude: "314820.487",
-  },
-  {
-    latitude: "5814647.707",
-    longitude: "5814647.707",
   },
   {
     latitude: -37.81228644885546,
@@ -3288,10 +3276,6 @@ var sites = [
   {
     latitude: -37.812317481404186,
     longitude: 144.96230167654906,
-  },
-  {
-    latitude: "Wrong",
-    longitude: "Wrong",
   },
   {
     latitude: -37.806518234923224,
